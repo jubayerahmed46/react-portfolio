@@ -4,7 +4,7 @@ function App() {
   return (
     <div>
       <h2 className="text-6xl text-purple-600 font-bold">
-        Welcome to my Portfolio!
+        Welcome to my Portfolio! ,<p>My name is Jubayer,</p>
       </h2>
     </div>
   );
