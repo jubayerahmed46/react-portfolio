@@ -1,4 +1,5 @@
 import { About, Banner, Projects } from "../";
+import Contact from "./Contact/Contact";
 
 function Home() {
   return (
@@ -6,6 +7,7 @@ function Home() {
       <Banner />
       <About />
       <Projects />
+      <Contact />
     </div>
   );
 }

@@ -25,7 +25,7 @@ function Banner() {
   ];
 
   return (
-    <div className="flex md:flex-row flex-col gap-10 md:gap-36 items-center mt-20">
+    <div className="flex md:flex-row flex-col gap-10 md:gap-24 lg:gap-36  items-center mt-20">
       <div className="relative">
         <img
           src={graphic}
@@ -74,7 +74,7 @@ function Banner() {
         <img
           src={myPic}
           alt="my image"
-          className=" md:h-80 h-64 aspect-square  rounded-full border-white border-4"
+          className=" md:h-80 h-64 aspect-square  rounded-full border-white border-4 object-cover"
         />
       </div>
     </div>

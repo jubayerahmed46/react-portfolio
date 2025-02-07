@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import darkLogo from "../../assets/dark-logo.png";
 import lightLogo from "../../assets/light-logo.png";
+import { Link } from "react-router";
 
 function Nav() {
   const [openDropDown, setOpenDropDown] = useState(false);
@@ -32,15 +33,17 @@ function Nav() {
   }, []);
 
   return (
-    <nav className="py-5 dark:border-b dark:border-b-gray-600/50 mb-8 relative">
+    <nav className="py-5 dark:border-b dark:border-b-gray-600/50 mb-8  sticky top-0 dark:bg-[#0B0B0B] z-50">
       <div className="flex justify-between items-center relative">
         {/* Brand Logo */}
         <div>
-          <img
-            src={true ? darkLogo : lightLogo}
-            className="md:h-9 h-7"
-            alt="brand logo"
-          />
+          <Link to={"/"}>
+            <img
+              src={true ? darkLogo : lightLogo}
+              className="md:h-9 h-7 cursor-pointer"
+              alt="brand logo"
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
