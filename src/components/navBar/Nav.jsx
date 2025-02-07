@@ -38,8 +38,8 @@ function Nav() {
   }, []);
 
   return (
-    <nav className="py-5 dark:border-b dark:border-b-gray-600/50 mb-8  sticky top-0 dark:bg-[#0B0B0B] z-50">
-      <div className="flex justify-between items-center relative">
+    <nav className="py-5 dark:border-b dark:border-b-gray-600/50 mb-8  sticky top-0 dark:bg-[#0B0B0B] z-50 max-w-7xl mx-auto sm:px-4 px-4 md:px-6 lg:px-14">
+      <div className="flex justify-between items-center relative ">
         {/* Brand Logo */}
         <div>
           <Link to={"/"}>
