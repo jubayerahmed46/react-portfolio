@@ -4,7 +4,7 @@ import Card from "./Card"; // Assuming Card is implemented correctly with the pa
 
 function Projects() {
   return (
-    <div className="mt-16">
+    <div className="mt-24">
       <div>
         <Heading>All Creative Works</Heading>
         <p className="text-lg dark-gray">
