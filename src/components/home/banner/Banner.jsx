@@ -4,12 +4,13 @@ import { FaFacebook } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
 import graphic from "../../../assets/graphic.svg";
 import myPic from "../../../assets/me.jpg";
+import { Link } from "react-router";
 
 function Banner() {
   const socialItems = [
     {
       label: "Github",
-      link: "/",
+      link: "https://github.com/jubayerahmed46",
       icon: <FaGithub />,
     },
     {
@@ -51,13 +52,12 @@ function Banner() {
         <div className="w-auto">
           <div className="flex gap-4 z-10 relative">
             {socialItems.map((item) => (
-              <button
-                className="md:py-2 p-1 md:px-4 px-2 dark:bg-[#4141425d] hover:dark:bg-[#4141427d] cursor-pointer rounded-md md:text-base text-sm flex justify-center items-center gap-2 shadow"
-                key={item.label}
-              >
-                <span className="text-[#007BFF] text-xl">{item.icon}</span>
-                <span className="font-medium">{item.label}</span>
-              </button>
+              <Link to={item.link} key={item.label}>
+                <button className="md:py-2 p-1 md:px-4 px-2 dark:bg-[#4141425d] hover:dark:bg-[#4141427d] cursor-pointer rounded-md md:text-base text-sm flex justify-center items-center gap-2 shadow">
+                  <span className="text-[#007BFF] text-xl">{item.icon}</span>
+                  <span className="font-medium">{item.label}</span>
+                </button>
+              </Link>
             ))}
           </div>
           <div className="flex gap-4 ">
