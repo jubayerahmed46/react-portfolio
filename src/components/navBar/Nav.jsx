@@ -2,14 +2,19 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import darkLogo from "../../assets/dark-logo.png";
 import lightLogo from "../../assets/light-logo.png";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 function Nav() {
   const [openDropDown, setOpenDropDown] = useState(false);
   const menuRef = useRef(null);
+  const location = useLocation();
 
   const links = [
-    { label: "Home", id: "932874987239784", path: "home" },
+    {
+      label: "Home",
+      id: "932874987239784",
+      path: location.pathname.includes("projects") ? "/" : "home",
+    },
     { label: "About", id: "934539784", path: "about" },
     { label: "Tech Stack", id: "9328747239784", path: "tech" },
     { label: "Projects", id: "932874939784", path: "projects" },
@@ -50,7 +55,12 @@ function Nav() {
         <div className="md:block hidden">
           <ul className="flex">
             {links.map((link) => (
-              <a key={link.id} href={`#${link.path}`}>
+              <a
+                key={link.id}
+                href={
+                  location.pathname.includes("projects") ? "/" : `#${link.path}`
+                }
+              >
                 <li className="py-2 px-4 hover:dark:bg-[#4141425d] active:dark:bg-[#414142ce] font-semibold cursor-pointer rounded-md text-base">
                   {link.label}
                 </li>
@@ -103,13 +113,21 @@ function Nav() {
             >
               <ul className="flex flex-col py-4">
                 {links.map((link) => (
-                  <li
+                  <a
                     key={link.id}
-                    className="py-4 px-4 hover:dark:bg-[#4141425d] active:dark:bg-[#414142ce] font-semibold cursor-pointer rounded-md text-base"
-                    onClick={() => setOpenDropDown(false)}
+                    href={
+                      location.pathname.includes("projects")
+                        ? "/"
+                        : `#${link.path}`
+                    }
                   >
-                    {link.label}
-                  </li>
+                    <li
+                      className="py-4 px-4 hover:dark:bg-[#4141425d] active:dark:bg-[#414142ce] font-semibold cursor-pointer rounded-md text-base"
+                      onClick={() => setOpenDropDown(false)}
+                    >
+                      {link.label}
+                    </li>
+                  </a>
                 ))}
               </ul>
             </motion.div>

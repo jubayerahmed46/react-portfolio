@@ -6,77 +6,102 @@ import { FaGithub } from "react-icons/fa";
 
 function Details() {
   const { name } = useParams();
-  const [project, setProject] = useState({});
+  const [project, setProject] = useState(null);
 
   useEffect(() => {
-    const proj = projects.find((p) => {
-      return p.route === name;
-    });
-    setProject(proj);
+    const proj = projects.find((p) => p.route === name);
+    setProject(proj || null); // Handle undefined cases safely
   }, [name]);
 
-  if (!project?.image) {
-    return <h2>Loading...</h2>;
+  if (!project) {
+    return <h2 className="text-center text-xl mt-10">Project not found.</h2>;
   }
 
   return (
-    <div>
-      <div className="border-b border-gray-500/40 pb-2 mb-5">
-        <div className="">
-          <img
-            src={project.image}
-            alt={project.name}
-            className="rounded-md lg:h-[500px]  mx-auto"
-          />
-        </div>
-        <h2 className="text-4xl font-bold  mt-5 ">{project.name} </h2>
+    <div className="max-w-4xl mx-auto p-5">
+      {/* Project Header */}
+      <div className="border-b border-gray-500/40 pb-5 mb-5">
+        <img
+          src={project.image}
+          alt={project.name}
+          className="rounded-md lg:h-[500px] w-full object-cover mx-auto shadow-lg"
+        />
+        <h2 className="text-4xl font-bold mt-5">{project.name}</h2>
+
+        {/* Links */}
         <div className="mt-3 flex gap-5">
-          <Link to={project.github}>
-            {" "}
-            <button className="flex justify-center gap-2 items-center  cursor-pointer">
-              <FaGithub /> <span className="text-[#007BFF]">Github Repo</span>
-            </button>
-          </Link>
-          <Link to={project.liveLink}>
-            <button className="flex justify-center gap-2 items-center  cursor-pointer">
-              <LuExternalLink />{" "}
-              <span className="text-[#007BFF]">Live Site</span>
-            </button>
-          </Link>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center gap-2 items-center text-[#007BFF] hover:text-[#0056b3] transition duration-300"
+          >
+            <FaGithub /> GitHub Repo
+          </a>
+          <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex justify-center gap-2 items-center text-[#007BFF] hover:text-[#0056b3] transition duration-300"
+          >
+            <LuExternalLink /> Live Site
+          </a>
         </div>
       </div>
+
+      {/* Project Details */}
       <div>
-        <div>
-          <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
-            Overview
-          </h2>
-          <p> {project.description} </p>
-        </div>
+        {/* Overview */}
+        <Section title="Overview" content={project.description} />
+
+        {/* Tech Stack */}
         <div className="mt-8">
           <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
             Tech Stack
           </h2>
-          <p> {project.description} </p>
+          <div className="flex flex-wrap gap-2">
+            {project.stack.map((tech, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 text-sm font-semibold rounded-md shadow-md"
+                style={{ backgroundColor: tech.color, color: "#fff" }}
+              >
+                {tech.name}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="mt-8">
-          <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
-            Features ✨
-          </h2>
-          <p> {project.description} </p>
-        </div>
-        <div className="mt-8">
-          <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
-            Challenges
-          </h2>
-          <p> {project.description} </p>
-        </div>
-        <div className="mt-8">
-          <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
-            Goals
-          </h2>
-          <p> {project.description} </p>
-        </div>
+
+        {/* Features */}
+        <Section title="Features ✨" list={project.features} />
+
+        {/* Challenges */}
+        <Section title="Challenges" list={project.challenges} />
+
+        {/* Goals */}
+        <Section title="Future Goals" list={project.goals} />
       </div>
+    </div>
+  );
+}
+
+/* Reusable Section Component */
+function Section({ title, content, list }) {
+  return (
+    <div className="mt-8">
+      <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
+        {title}
+      </h2>
+      {content && <p className="text-gray-300">{content}</p>}
+      {list && (
+        <ul className="list-disc list-inside text-gray-300">
+          {list.map((item, index) => (
+            <li key={index} className="mb-1">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
