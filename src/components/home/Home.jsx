@@ -1,9 +1,11 @@
-import Banner from "./banner/Banner";
+import { About, Banner, Projects } from "../";
 
 function Home() {
   return (
     <div>
       <Banner />
+      <About />
+      <Projects />
     </div>
   );
 }
