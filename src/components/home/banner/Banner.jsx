@@ -25,7 +25,10 @@ function Banner() {
   ];
 
   return (
-    <div className="flex md:flex-row flex-col gap-10 md:gap-24 lg:gap-36  items-center mt-20">
+    <div
+      className="flex md:flex-row flex-col gap-10 md:gap-24 lg:gap-36  items-center mt-20"
+      id="home"
+    >
       <div className="relative">
         <img
           src={graphic}

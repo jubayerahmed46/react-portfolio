@@ -28,3 +28,7 @@ body {
     color: "#007BFF";
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

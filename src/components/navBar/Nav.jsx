@@ -9,7 +9,7 @@ function Nav() {
   const menuRef = useRef(null);
 
   const links = [
-    { label: "Home", id: "932874987239784", path: "homw" },
+    { label: "Home", id: "932874987239784", path: "home" },
     { label: "About", id: "934539784", path: "about" },
     { label: "Tech Stack", id: "9328747239784", path: "tech" },
     { label: "Projects", id: "932874939784", path: "projects" },
@@ -50,12 +50,11 @@ function Nav() {
         <div className="md:block hidden">
           <ul className="flex">
             {links.map((link) => (
-              <li
-                key={link.id}
-                className="py-2 px-4 hover:dark:bg-[#4141425d] active:dark:bg-[#414142ce] font-semibold cursor-pointer rounded-md text-base"
-              >
-                {link.label}
-              </li>
+              <a key={link.id} href={`#${link.path}`}>
+                <li className="py-2 px-4 hover:dark:bg-[#4141425d] active:dark:bg-[#414142ce] font-semibold cursor-pointer rounded-md text-base">
+                  {link.label}
+                </li>
+              </a>
             ))}
           </ul>
         </div>

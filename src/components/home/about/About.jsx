@@ -4,7 +4,7 @@ import "./about.css";
 
 function About() {
   return (
-    <div className="mt-20">
+    <div className="mt-20" id="about">
       <Heading>⚡ About Me</Heading>
       <div className="flex flex-col md:flex-row mt-4">
         {/* Left Section */}

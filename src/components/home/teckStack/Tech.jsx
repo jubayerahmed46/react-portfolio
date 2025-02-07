@@ -3,7 +3,7 @@ import TechList from "./TechLists";
 
 const Tech = () => {
   return (
-    <div className="  mt-24">
+    <div className="  mt-24" id="tech">
       <div>
         <Heading> Technology</Heading>
         <p className="text-lg dark-gray">Here's what I typically work with.</p>

@@ -4,7 +4,10 @@ import { CgMail } from "react-icons/cg";
 
 function Contact() {
   return (
-    <div className="mt-24 flex flex-col justify-center items-center">
+    <div
+      className="mt-24 flex flex-col justify-center items-center"
+      id="contact"
+    >
       <div className="md:w-[450px] text-center">
         <h1 className="text-4xl font-bold">Let’s Talk</h1>
         <p className="text-base dark-gray mt-6">
