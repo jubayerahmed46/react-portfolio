@@ -40,7 +40,7 @@ function Banner() {
         <h3 className="md:text-3xl text-xl text-[#007BFF] font-semibold z-10 relative">
           Hey there!, I&apos;m-
         </h3>
-        <h1 className="md:text-7xl text-6xl  font-extrabold z-10 relative">
+        <h1 className="md:text-7xl text-4xl  font-extrabold z-10 relative">
           Jubayer Ahmed.
         </h1>
         <p className="md:text-2xl text-xl my-8 lg:w-xl z-10 relative">
