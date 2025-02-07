@@ -27,7 +27,7 @@ function Banner() {
 
   return (
     <div
-      className="flex md:flex-row flex-col gap-10 md:gap-24 lg:gap-36  items-center mt-20"
+      className="flex lg:flex-row flex-col gap-10  lg:gap-16 xl:gap-36  items-center mt-20"
       id="home"
     >
       <div className="relative">
@@ -74,11 +74,13 @@ function Banner() {
         </div>
       </div>
       <div className="grid  justify-center">
-        <img
-          src={myPic}
-          alt="my image"
-          className=" md:h-80 h-64 aspect-square  rounded-full border-white border-4 object-cover"
-        />
+        <div>
+          <img
+            src={myPic}
+            alt="my image"
+            className=" md:h-80 h-64 aspect-square  rounded-full border-white border-4 object-cover"
+          />
+        </div>
       </div>
     </div>
   );
