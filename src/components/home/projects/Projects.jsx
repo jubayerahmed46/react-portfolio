@@ -6,10 +6,10 @@ function Projects() {
   return (
     <div className="mt-24" id="projects">
       <div>
-        <Heading>All Creative Works</Heading>
-        <p className="text-lg dark-gray">
-          Here's some of my projects that I have worked on.
-        </p>
+        <Heading>
+          A small selection of{" "}
+          <span className="text-[#007BFF]">recent projects</span>
+        </Heading>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-4 mt-7">
         {projects.map((proj) => (

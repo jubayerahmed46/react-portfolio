@@ -6,8 +6,8 @@ function Home() {
   return (
     <div>
       <Banner />
-      <About />
       <Projects />
+      <About />
       <Tech />
       <Contact />
     </div>
