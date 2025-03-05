@@ -1,3 +1,4 @@
+import React from "react";
 import css from "../../../assets/tech/css.webp";
 import express from "../../../assets/tech/expressjs.webp";
 import git from "../../../assets/tech/git.webp";
@@ -15,108 +16,36 @@ import daisyUi from "../../../assets/tech/daisyui.png";
 import nodemailer from "../../../assets/tech/nodemailer.png";
 
 const TechList = () => {
+  const techs = [
+    html,
+    css,
+    tailwind,
+    js,
+    react,
+    daisyUi,
+    node,
+    express,
+    mongodb,
+    jwt,
+    stripe,
+    nodemailer,
+    vscode,
+    git,
+    github,
+  ];
+
   return (
-    <div className=" mt-10 flex flex-wrap justify-center gap-10">
-      <div className="flex md:flex-row flex-col gap-13">
-        <div className="grid grid-cols-3 gap-5 border p-4 rounded-md border-gray-500/40">
+    <div className="mt-10 flex justify-center">
+      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-8">
+        {techs.map((tech, index) => (
           <img
+            key={index}
             data-aos="zoom-in"
-            src={html}
-            alt="html"
+            src={tech}
+            alt={`tech-${index}`} // Added alt text
             className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
           />
-          <img
-            data-aos="zoom-in"
-            src={css}
-            alt="css"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-
-          <img
-            data-aos="zoom-in"
-            src={tailwind}
-            alt="tailwind"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-          <img
-            data-aos="zoom-in"
-            src={js}
-            alt="js"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-
-          <img
-            data-aos="zoom-in"
-            src={react}
-            alt="react"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-          <img
-            data-aos="zoom-in"
-            src={daisyUi}
-            alt="daisyui"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-        </div>
-        <div className="grid grid-cols-3 gap-5  border p-4 rounded-md border-gray-500/40">
-          <img
-            data-aos="zoom-in"
-            src={node}
-            alt="node"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-          <img
-            data-aos="zoom-in"
-            src={express}
-            alt="express"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-          <img
-            data-aos="zoom-in"
-            src={mongodb}
-            alt="mongodb"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-          <img
-            data-aos="zoom-in"
-            src={jwt}
-            alt="jwt"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-          <img
-            data-aos="zoom-in"
-            src={stripe}
-            alt="stripe"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-          <img
-            data-aos="zoom-in"
-            src={nodemailer}
-            alt="nodemailer"
-            className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-3 gap-5   border p-4 rounded-md border-gray-500/40">
-        <img
-          data-aos="zoom-in"
-          src={vscode}
-          alt="vscode"
-          className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-        />
-        <img
-          data-aos="zoom-in"
-          src={git}
-          alt="git"
-          className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-        />
-        <img
-          data-aos="zoom-in"
-          src={github}
-          alt="github"
-          className="w-20 cursor-pointer rounded-xl transition-all hover:scale-105"
-        />
+        ))}
       </div>
     </div>
   );

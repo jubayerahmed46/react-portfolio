@@ -5,10 +5,13 @@ import Footer from "../components/footer/Footer";
 
 function MainLayout() {
   return (
-    <div className=" dark:bg-[#0B0B0B] min-h-screen dark:text-[#EBECF3]  relative">
+    <div
+      className=" dark:bg-[#0B0B0B] min-h-screen dark:text-[#EBECF3]  relative "
+      id="home"
+    >
       <Nav />
 
-      <div className="max-w-7xl mx-auto sm:px-4 px-4 md:px-6 lg:px-14">
+      <div className="max-w-6xl mx-auto sm:px-4 px-4 md:px-6 lg:px-14">
         <Outlet />
         <Footer />
       </div>

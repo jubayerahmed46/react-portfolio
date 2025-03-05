@@ -1,8 +1,12 @@
-function Heading({ children }) {
+function Heading({ title, subTitle }) {
   return (
-    <h2 className=" md:text-5xl text-2xl text-center font-bold mb-12">
-      {children}
-    </h2>
+    <div className=" justify-center flex flex-col text-center  mb-12 items-center">
+      <h2 className=" md:text-4xl  text-2xl font-bold ">
+        {title}
+        <span className="text-5xl ml-0.5  text-[#007BFF]">.</span>
+      </h2>
+      <p className="dark-gray  mt-2 text-sm">{subTitle} </p>
+    </div>
   );
 }
 

@@ -4,14 +4,11 @@ import Card from "./Card"; // Assuming Card is implemented correctly with the pa
 
 function Projects() {
   return (
-    <div className="mt-24" id="projects">
+    <div className="mt-36" id="projects">
       <div>
-        <Heading>
-          A small selection of{" "}
-          <span className="text-[#007BFF]">recent projects</span>
-        </Heading>
+        <Heading title={"Projects"} subTitle={"Most recent works"} />
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-4 mt-7">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-4 mt-7 ">
         {projects.map((proj) => (
           <Card key={proj.id} proj={proj} />
         ))}

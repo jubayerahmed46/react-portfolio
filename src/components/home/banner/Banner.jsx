@@ -24,10 +24,7 @@ function Banner() {
   ];
 
   return (
-    <div
-      className=" flex flex-col items-center   text-center    h-[calc(100vh-250px)] justify-center"
-      id="home"
-    >
+    <div className=" flex flex-col items-center   text-center justify-center">
       <div className="grid  justify-center">
         <div>
           <img
@@ -39,7 +36,7 @@ function Banner() {
       </div>
       <div className="relative flex flex-col items-center">
         <h1 className="md:text-6xl text-3xl  font-extrabold z-10 relative mt-5">
-          Hi!, I'm Jubayer Ahmed.
+          Hi!, I'm Jubayer.
         </h1>
         <p className="md:text-xl text-lg mx-auto mt-3 lg:w-xl z-10 relative">
           <span className="font-medium">A Frontend Web Developer,</span>{" "}

@@ -6,8 +6,9 @@ function Home() {
   return (
     <div>
       <Banner />
-      <Projects />
       <About />
+      <Projects />
+
       <Tech />
       <Contact />
     </div>

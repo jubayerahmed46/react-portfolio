@@ -4,12 +4,13 @@ import "./about.css";
 
 function About() {
   return (
-    <div className="mt-20" id="about">
-      <Heading>⚡ About Me</Heading>
-      <div className="flex flex-col md:flex-row mt-4">
+    <div className="mt-36">
+      <p id="about"></p>
+      <Heading title={"About"} subTitle={"Journey and Skills"} />
+      <div className="flex flex-col md:flex-row ">
         {/* Left Section */}
         <div className="flex-1 pr-4">
-          <p className="dark-gray mt-4">
+          <p className="dark-gray ">
             Hey! I'm Jubayer Ahmed. I love building real-world solutions through
             code. Turning ideas into functional applications and solving
             real-world challenges with technology excites me the most.

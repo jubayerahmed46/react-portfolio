@@ -1,56 +1,67 @@
-import { FaWhatsapp } from "react-icons/fa6";
-import { FaPhoneSquareAlt } from "react-icons/fa";
-import { CgMail } from "react-icons/cg";
+import Heading from "../../heading/Heading";
+import { MdEmail } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { Link } from "react-router";
+import Form from "./Form";
 
 function Contact() {
+  const socialLinks = [
+    {
+      id: "e",
+      label: "Email",
+      to: "mailto:jubayerahmed.dev@gmail.com",
+      value: "jubayerahmed.dev@gmail.com",
+      icon: <MdEmail size={26} />,
+    },
+    {
+      id: "li",
+      label: "LinkedIn",
+      value: "jubayer-ahmed1",
+      to: "https://www.linkedin.com/in/jubayer-ahmed1/",
+      icon: <FaLinkedin size={26} />,
+    },
+    {
+      id: "wa",
+      label: "What's App",
+      value: "+880 1875329737",
+      to: "https://wa.me/8801875329737",
+      icon: <IoLogoWhatsapp size={26} />,
+    },
+  ];
   return (
-    <div
+    <section
       className="mt-24 flex flex-col justify-center items-center"
       id="contact"
     >
-      <div className="md:w-[450px] text-center">
-        <h1 className="text-4xl font-bold">Let’s Talk</h1>
-        <p className="text-base dark-gray mt-6">
-          I'm currently specializing in{" "}
-          <span className="text-[#007BFF]">Front-end Development</span>. Feel
-          free to get in touch and talk more about your projects.
-        </p>
+      <Heading title={"Contact"} subTitle={"Connect with Me"} />
+
+      <div className="grid sm:grid-cols-2 gap-16">
+        <div>
+          <p className="dark-gray mb-11">
+            I'd be happy to connect! Feel free to reach out for project
+            inquiries, collaboration opportunities, or any other questions you
+            may have.
+          </p>
+          <div className="flex flex-col gap-5">
+            {socialLinks.map((link) => (
+              <Link key={link.id} to={link.to} target="_blank">
+                <div className="flex gap-4 items-center cursor-pointer">
+                  <div className="bg-[#007BFF] flex justify-center items-center rounded-md h-10 aspect-square">
+                    {link.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-base ">{link.label}</h3>
+                    <p className="dark-gray">{link.value}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <Form />
       </div>
-
-      {/* Contact Information */}
-      <div className="mt-6 text-lg border border-gray-500/40 rounded-md p-5 flex flex-col gap-3 w-[90%] md:w-[450px]">
-        {/* WhatsApp */}
-        <a
-          href="https://wa.me/8801875329737"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex gap-3 items-center text-[#0acd2e] bg-[#202020] p-1.5 rounded-xl px-4 hover:opacity-80 transition"
-        >
-          <FaWhatsapp className="text-3xl" />
-          <p className="text-lg">+880 1875 329737</p>
-        </a>
-
-        {/* Phone */}
-        <a
-          href="tel:01313698464"
-          className="flex gap-3 items-center text-[#0a72cd] bg-[#202020] p-1.5 rounded-xl px-4 hover:opacity-80 transition"
-        >
-          <FaPhoneSquareAlt className="text-3xl" />
-          <p className="text-lg">+880 01313 698464</p>
-        </a>
-
-        {/* Email */}
-        <a
-          href="mailto:jubayerahmed.dev@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex gap-3 items-center text-[#b6cd0a] bg-[#202020] p-1.5 rounded-xl px-4 hover:opacity-80 transition"
-        >
-          <CgMail className="text-3xl" />
-          <p className="text-lg">jubayerahmed.dev@gmail.com</p>
-        </a>
-      </div>
-    </div>
+    </section>
   );
 }
 
