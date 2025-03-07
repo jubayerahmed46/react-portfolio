@@ -10,8 +10,8 @@ function Nav() {
       path: location.pathname.includes("projects") ? "/" : "home",
     },
     { label: "About", id: "934539784", path: "about" },
-    { label: "Tech Stack", id: "9328747239784", path: "tech" },
     { label: "Projects", id: "932874939784", path: "projects" },
+    { label: "Tech Stack", id: "9328747239784", path: "tech" },
     { label: "Contact", id: "93287499784", path: "contact" },
   ];
 

@@ -21,6 +21,7 @@ function InputBox({
           placeholder={placeholder}
           name={name}
           className={classes}
+          required
         />
       </label>
     );
@@ -33,6 +34,7 @@ function InputBox({
         placeholder={placeholder}
         name={name}
         className={classes}
+        required
       />
     </label>
   );

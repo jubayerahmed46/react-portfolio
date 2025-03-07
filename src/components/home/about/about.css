@@ -5,8 +5,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #232323;
-  transform: rotate(-2deg);
+  background-color: #23232380;
+  transform: rotate(-6deg);
   border-radius: 10px;
 }
 
@@ -17,7 +17,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #007bff45;
-  transform: rotate(10deg);
+  background-color: #007bff2d;
+  transform: rotate(6deg);
   border-radius: 10px;
 }

@@ -1,15 +1,19 @@
 import Heading from "../../heading/Heading";
 import about from "../../../assets/about.jpg";
 import "./about.css";
+import { motion } from "motion/react";
 
 function About() {
   return (
-    <div className="mt-36">
-      <p id="about"></p>
-      <Heading title={"About"} subTitle={"Journey and Skills"} />
-      <div className="flex flex-col md:flex-row ">
-        {/* Left Section */}
-        <div className="flex-1 pr-4">
+    <div className="mt-36" id="about">
+      <Heading title={"About"} subTitle={"Journey and Objective"} />
+      <div className="flex flex-col md:flex-row  md:gap-5 gap-8">
+        <motion.div
+          initial={{ opacity: 0, translateY: "30px" }}
+          whileInView={{ opacity: 1, translateY: "0px" }}
+          viewport={{ once: true }}
+          className="flex-1 pr-4"
+        >
           <p className="dark-gray ">
             Hey! I'm Jubayer Ahmed. I love building real-world solutions through
             code. Turning ideas into functional applications and solving
@@ -35,17 +39,22 @@ function About() {
             I believe continuous learning fuels both personal and professional
             growth.
           </p>
-        </div>
+        </motion.div>
 
         {/* Right Section */}
-        <div className="flex-1 pl-4 ">
-          <div className="aboutImg relative  md:h-80 h-64  w-80 mx-auto md:mt-0 mt-10">
+        <div className="flex-1 ">
+          <motion.div
+            initial={{ opacity: 0, translateY: "80px" }}
+            whileInView={{ opacity: 1, translateY: "0px" }}
+            viewport={{ once: true }}
+            className="relative  md:h-80 md:w-10/12 h-72 w-80  mx-auto md:mt-0 mt-10"
+          >
             <img
               src={about}
               alt="Profile"
-              className="rounded-lg shadow-lg h-full mx-auto rotate-3 z-40 relative w-full object-cover "
+              className="rounded-lg shadow-2xl h-full mx-auto z-40 relative w-full object-cover   shadow-blue-700/20"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
