@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 import projects from "../projects";
 import { LuExternalLink } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function Details() {
   const { name } = useParams();
@@ -10,7 +11,7 @@ function Details() {
 
   useEffect(() => {
     const proj = projects.find((p) => p.route === name);
-    setProject(proj || null); // Handle undefined cases safely
+    setProject(proj || null);
   }, [name]);
 
   if (!project) {
@@ -19,17 +20,30 @@ function Details() {
 
   return (
     <div className="max-w-4xl mx-auto p-5">
-      {/* Project Header */}
       <div className="border-b border-gray-500/40 pb-5 mb-5">
-        <img
+        <motion.img
           src={project.image}
           alt={project.name}
           className="rounded-md lg:h-[500px] w-full object-cover mx-auto shadow-lg"
+          initial={{ opacity: 0, translateY: "10px" }}
+          whileInView={{ opacity: 1, translateY: "0px" }}
+          viewport={{ once: true }}
         />
-        <h2 className="text-4xl font-bold mt-5">{project.name}</h2>
+        <motion.h2
+          initial={{ opacity: 0, translateX: "-50px" }}
+          whileInView={{ opacity: 1, translateX: "0px" }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold mt-5"
+        >
+          {project.name}
+        </motion.h2>
 
-        {/* Links */}
-        <div className="mt-3 flex gap-5">
+        <motion.div
+          initial={{ opacity: 0, translateY: "30px" }}
+          whileInView={{ opacity: 1, translateY: "0px" }}
+          viewport={{ once: true }}
+          className="mt-3 flex gap-5"
+        >
           <a
             href={project.github}
             target="_blank"
@@ -46,7 +60,7 @@ function Details() {
           >
             <LuExternalLink /> Live Site
           </a>
-        </div>
+        </motion.div>
       </div>
 
       {/* Project Details */}
@@ -55,7 +69,12 @@ function Details() {
         <Section title="Overview" content={project.description} />
 
         {/* Tech Stack */}
-        <div className="mt-8">
+        <motion.div
+          initial={{ opacity: 0, translateY: "30px" }}
+          whileInView={{ opacity: 1, translateY: "0px" }}
+          viewport={{ once: true }}
+          className="mt-8"
+        >
           <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
             Tech Stack
           </h2>
@@ -70,7 +89,7 @@ function Details() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Features */}
         <Section title="Features ✨" list={project.features} />
@@ -85,10 +104,14 @@ function Details() {
   );
 }
 
-/* Reusable Section Component */
 function Section({ title, content, list }) {
   return (
-    <div className="mt-8">
+    <motion.div
+      initial={{ opacity: 0, translateY: "30px" }}
+      whileInView={{ opacity: 1, translateY: "0px" }}
+      viewport={{ once: true }}
+      className="mt-8"
+    >
       <h2 className="border-l-4 border-[#007BFF] pl-2 text-2xl font-semibold mb-3">
         {title}
       </h2>
@@ -102,7 +125,7 @@ function Section({ title, content, list }) {
           ))}
         </ul>
       )}
-    </div>
+    </motion.div>
   );
 }
 

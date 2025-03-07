@@ -1,6 +1,5 @@
 import Heading from "../../heading/Heading";
 import about from "../../../assets/about.jpg";
-import "./about.css";
 import { motion } from "motion/react";
 
 function About() {
@@ -52,7 +51,7 @@ function About() {
             <img
               src={about}
               alt="Profile"
-              className="rounded-lg shadow-2xl h-full mx-auto z-40 relative w-full object-cover   shadow-blue-700/20"
+              className="rounded-lg shadow-2xl h-full mx-auto w-full object-cover   shadow-blue-700/20"
             />
           </motion.div>
         </div>

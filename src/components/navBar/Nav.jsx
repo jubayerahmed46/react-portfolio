@@ -1,7 +1,12 @@
+import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router";
+import { HiMenuAlt1 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
+import { useState } from "react";
 
 function Nav() {
   const location = useLocation();
+  const [openMenu, setOpenMenu] = useState(false);
 
   const links = [
     {
@@ -16,18 +21,23 @@ function Nav() {
   ];
 
   return (
-    <nav className="py-3 dark:border-b dark:border-b-gray-600/50   sticky top-0 dark:bg-[#0B0B0B] z-50 max-w-7xl mx-auto sm:px-4 px-4 md:px-6 lg:px-14  mb-10">
+    <motion.nav
+      initial={{ opacity: 0, translateY: "-50px" }}
+      whileInView={{ opacity: 1, translateY: "0px" }}
+      viewport={{ once: true }}
+      className="py-3 dark:border-b dark:border-b-gray-600/50  z-40  sticky top-0 dark:bg-[#0B0B0B] max-w-7xl mx-auto sm:px-4 px-4 md:px-6 lg:px-14  mb-10"
+    >
       <div className="flex justify-between items-center relative ">
-        {/* Brand Logo */}
         <div>
           <Link to={"/"}>
-            <h2 className="font-bold text-2xl">J / A</h2>
+            <h2 className="font-bold text-2xl">
+              J <span className="text-5xl -mx-1  text-[#007BFF]">.</span> A
+            </h2>
           </Link>
         </div>
 
-        {/* Desktop Navigation Links */}
-        <div className="md:block hidden">
-          <ul className="flex">
+        <div className="sm:block hidden">
+          <ul className="flex ">
             {links.map((link) => (
               <a
                 key={link.id}
@@ -42,8 +52,53 @@ function Nav() {
             ))}
           </ul>
         </div>
+
+        <button
+          onClick={() => setOpenMenu(true)}
+          className="sm:hidden cursor-pointer"
+        >
+          <HiMenuAlt1 size={24} />
+        </button>
       </div>
-    </nav>
+      <div
+        className={`${
+          openMenu
+            ? " top-0 left-0 h-screen w-full z-50  bg-black"
+            : " -top-[800px] left-0 h-screen w-full z-50  bg-black"
+        }   sm:hidden absolute transition-all duration-500`}
+      >
+        <div className="flex justify-between py-3 dark:border-b dark:border-b-gray-600/50  z-40  sticky top-0  max-w-7xl mx-auto sm:px-4 px-4 md:px-6 lg:px-14  mb-10">
+          <div>
+            <Link to={"/"}>
+              <h2 className="font-bold text-2xl">
+                J <span className="text-5xl -mx-1  text-[#007BFF]">.</span> A
+              </h2>
+            </Link>
+          </div>
+          <button className="cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <IoClose size={24} />
+          </button>
+        </div>
+
+        <div className="">
+          <ul className="  p-5">
+            {links.map((link) => (
+              <a
+                key={link.id}
+                href={
+                  location.pathname.includes("projects") ? "/" : `#${link.path}`
+                }
+                onClick={() => setOpenMenu(false)}
+              >
+                <li className="py-7 px-4  hover:opacity-50 cursor-pointer  text-xl text-center">
+                  {link.label}
+                </li>
+              </a>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </motion.nav>
   );
 }
 
