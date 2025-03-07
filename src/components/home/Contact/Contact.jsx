@@ -39,7 +39,7 @@ function Contact() {
         viewport={{ once: true }}
         className=" flex flex-col justify-center items-center bg-gradient-to-t to-black/30 p-4 rounded-md from-transparent"
       >
-        <div className="grid md:grid-cols-2 ">
+        <div className="grid md:grid-cols-2 md:gap-0 gap-7">
           <div className="md:border-r md:border-gray-500/15 md:pr-7 ">
             <p className="dark-gray mb-11">
               I'd be happy to connect! Feel free to reach out for project
