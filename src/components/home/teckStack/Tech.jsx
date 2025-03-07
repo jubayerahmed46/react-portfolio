@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 
 const Tech = () => {
   return (
-    <div className="  mt-24" id="tech">
+    <div className="md:mt-28 mt-16" id="tech">
       <div>
         <Heading title={"Technologies"} subTitle={"Daily used tech & tools"} />
       </div>

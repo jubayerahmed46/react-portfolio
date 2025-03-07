@@ -4,7 +4,7 @@ import Card from "./Card";
 
 function Projects() {
   return (
-    <div className="mt-36 " id="projects">
+    <div className="md:mt-28 mt-16" id="projects">
       <div>
         <Heading title={"Projects"} subTitle={"Most recent works"} />
       </div>

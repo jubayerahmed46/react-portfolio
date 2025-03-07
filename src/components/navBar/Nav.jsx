@@ -64,8 +64,8 @@ function Nav() {
         className={`${
           openMenu
             ? " top-0 left-0 h-screen w-full z-50  bg-black"
-            : " -top-[800px] left-0 h-screen w-full z-50  bg-black"
-        }   sm:hidden absolute transition-all duration-500`}
+            : " -top-[950px] left-0 h-screen w-full z-50  bg-black"
+        }   sm:hidden absolute transition-all ease-initial duration-500`}
       >
         <div className="flex justify-between py-3 dark:border-b dark:border-b-gray-600/50  z-40  sticky top-0  max-w-7xl mx-auto sm:px-4 px-4 md:px-6 lg:px-14  mb-10">
           <div>

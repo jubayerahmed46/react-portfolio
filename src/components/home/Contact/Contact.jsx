@@ -31,7 +31,7 @@ function Contact() {
     },
   ];
   return (
-    <section className="mt-24" id="contact">
+    <section className="md:mt-28 mt-16" id="contact">
       <Heading title={"Contact"} subTitle={"Connect with Me"} />
       <motion.div
         initial={{ opacity: 0, translateY: "30px" }}

@@ -6,7 +6,7 @@ function Heading({ title, subTitle }) {
       initial={{ opacity: 0, translateX: "-50px" }}
       whileInView={{ opacity: 1, translateX: "0px" }}
       viewport={{ once: true }}
-      className="   mb-12 items-center"
+      className="   md:mb-12 mb-7 items-center"
     >
       <h2 className=" md:text-4xl  text-2xl font-bold ">
         {title}
