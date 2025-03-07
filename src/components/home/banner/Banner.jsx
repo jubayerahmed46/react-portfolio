@@ -14,11 +14,11 @@ function Banner() {
       icon: <FaGithub size={23} />,
     },
     {
-      link: "/",
+      link: "https://www.linkedin.com/in/jubayer-ahmed1/",
       icon: <FaLinkedin size={23} />,
     },
     {
-      link: "/",
+      link: "https://www.facebook.com/jubayerahmed.dev",
       icon: <FaFacebook size={23} />,
     },
   ];
@@ -67,7 +67,7 @@ function Banner() {
         </motion.p>
         <div className="flex gap-4 items-center mt-4">
           {socialItems.map((item, i) => (
-            <Link key={i} to={item.link}>
+            <Link key={i} to={item.link} target="_blank">
               <motion.span
                 initial={{ opacity: 0, translateY: "3px" }}
                 whileInView={{ opacity: 1, translateY: "0px" }}
@@ -94,7 +94,14 @@ function Banner() {
           className="w-auto"
         >
           <div className="flex gap-4 ">
-            <PrimaryButton>View Resume</PrimaryButton>
+            <Link
+              to={
+                "https://drive.google.com/file/d/11ZeNJpJ1rT6DJfa6fMcynJT5TvlVUodx/view?usp=sharing"
+              }
+              target="_blank"
+            >
+              <PrimaryButton>View Resume</PrimaryButton>
+            </Link>
             <a href="#contact">
               {" "}
               <SecondaryButton>Get In touch</SecondaryButton>
